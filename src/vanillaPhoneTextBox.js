@@ -25,4 +25,20 @@ const formatPhoneNumber = (phoneNumber) => {
     return `(${code}) ${part1}-${part2}`;
 };
 
+function vanillaPhoneTextBox(element) {
+    let phoneNumber = "";
+
+    element.addEventListener("beforeinput", e => {
+        if (!validateInput(e.data)) {
+            e.preventDefault();
+        }
+    });
+
+    element.addEventListener("input", () => {
+        phoneNumber = extractPhoneNumber(phoneTextBox.value);
+        phoneTextBox.value = formatPhoneNumber(phoneNumber);
+    });
+}
+
+export default vanillaPhoneTextBox;
 export { validateInput, extractPhoneNumber, formatPhoneNumber };
