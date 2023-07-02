@@ -1,0 +1,25 @@
+{
+  "name": "leetcode-phonenumber-question1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnaoumov/LeetCode-PhoneNumber-Question1.git"
+  },
+  "keywords": [
+    "LeetCode"
+  ],
+  "author": "mnaoumov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mnaoumov/LeetCode-PhoneNumber-Question1/issues"
+  },
+  "homepage": "https://github.com/mnaoumov/LeetCode-PhoneNumber-Question1#readme",
+  "dependencies": {
+    "jest": "^29.5.0"
+  }
+}
