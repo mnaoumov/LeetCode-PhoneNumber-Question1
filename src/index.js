@@ -2,7 +2,7 @@ import {
     validateInput,
     extractPhoneNumber,
     formatPhoneNumber
-} from "./phoneTextBox.js";
+} from "./vanillaPhoneTextBox.js";
 
 const phoneTextBox = document.getElementById("phone");
 
