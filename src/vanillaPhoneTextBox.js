@@ -35,8 +35,8 @@ function vanillaPhoneTextBox(element) {
     });
 
     element.addEventListener("input", () => {
-        phoneNumber = extractPhoneNumber(phoneTextBox.value);
-        phoneTextBox.value = formatPhoneNumber(phoneNumber);
+        phoneNumber = extractPhoneNumber(element.value);
+        element.value = formatPhoneNumber(phoneNumber);
     });
 }
 
