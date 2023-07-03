@@ -5,13 +5,13 @@ export default function PhoneTextBox() {
     const id = useId();
     const [formattedPhoneNumber, setFormattedPhoneNumber] = useState("");
 
-    const handleBeforeInput = (e) => {
+    function handleBeforeInput(e) {
         if (!validateInput(e.data)) {
             e.preventDefault();
         }
     };
 
-    const handleInput = (e) => {
+    function handleInput(e) {
         phoneNumber = extractPhoneNumber(e.target.value);
         setFormattedPhoneNumber(formatPhoneNumber(phoneNumber));
     };

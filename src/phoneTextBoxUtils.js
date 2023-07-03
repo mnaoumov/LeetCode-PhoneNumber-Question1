@@ -1,11 +1,14 @@
 const MAX_PHONE_LENGTH = 10;
 
-const validateInput = (inputData) => /^\d*$/.test(inputData ?? "");
+function validateInput(inputData) {
+    return /^\d*$/.test(inputData ?? "");
+}
 
-const extractPhoneNumber = (formattedPhoneNumber) =>
-    formattedPhoneNumber.replace(/\D/g, "").substring(0, MAX_PHONE_LENGTH);
+function extractPhoneNumber(formattedPhoneNumber) {
+    return formattedPhoneNumber.replace(/\D/g, "").substring(0, MAX_PHONE_LENGTH);
+}
 
-const formatPhoneNumber = (phoneNumber) => {
+function formatPhoneNumber(phoneNumber) {
     const length = phoneNumber.length;
     const PART1_INDEX = 3;
     const PART2_INDEX = 6;
