@@ -2,7 +2,7 @@ import {
     validateInput,
     extractPhoneNumber,
     formatPhoneNumber
-} from "../src/vanillaPhoneTextBox.js";
+} from "../src/phoneTextBoxUtils.js";
 
 describe("validateInput", () => {
     test("Returns true for empty input", () => {
