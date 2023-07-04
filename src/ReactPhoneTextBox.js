@@ -2,7 +2,7 @@ import { useId, useState } from "react";
 import { validateInput, extractPhoneNumber, formatPhoneNumber } from "./phoneTextBoxUtils";
 
 export default function ReactPhoneTextBox() {
-    const id = useId();
+    const textBoxId = useId();
     const [formattedPhoneNumber, setFormattedPhoneNumber] = useState("");
 
     function handleBeforeInput(e) {
@@ -18,8 +18,8 @@ export default function ReactPhoneTextBox() {
 
     return (
         <div className="container text-center">
-            <input type="tel" id={id} maxLength="16" placeholder="mobile number" autoComplete="off" value={formattedPhoneNumber} onBeforeInput={handleBeforeInput} onInput={handleInput} />
-            <div><label htmlFor={id}>(123) 456-7890</label></div>
+            <input type="tel" id={textBoxId} maxLength="16" placeholder="mobile number" autoComplete="off" value={formattedPhoneNumber} onBeforeInput={handleBeforeInput} onInput={handleInput} />
+            <div><label htmlFor={textBoxId}>(123) 456-7890</label></div>
         </div>
     );
 }
