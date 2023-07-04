@@ -1,7 +1,7 @@
 import { useId, useState } from "react";
 import { validateInput, extractPhoneNumber, formatPhoneNumber } from "./phoneTextBoxUtils";
 
-export default function PhoneTextBox() {
+export default function ReactPhoneTextBox() {
     const id = useId();
     const [formattedPhoneNumber, setFormattedPhoneNumber] = useState("");
 
