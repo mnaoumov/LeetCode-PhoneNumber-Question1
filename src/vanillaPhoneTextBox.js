@@ -1,4 +1,4 @@
-import {validateInput, extractPhoneNumber, formatPhoneNumber} from "./phoneTextBoxUtils.js";
+import { validateInput, extractPhoneNumber, formatPhoneNumber } from "./phoneTextBoxUtils.js";
 
 export default function vanillaPhoneTextBox(element) {
     element.addEventListener("beforeinput", e => {
