@@ -5,49 +5,49 @@ import {
 } from "../src/phoneTextBoxUtils.js";
 
 describe("validateInput", () => {
-    test("Returns true for empty input", () => {
+    it("Returns true for empty input", () => {
         expect(validateInput("")).toBe(true);
     });
 
-    test("Returns true for null input", () => {
+    it("Returns true for null input", () => {
         expect(validateInput(null)).toBe(true);
     });
 
-    test("Returns true for single digits", () => {
+    it("Returns true for single digits", () => {
         for (const inputData of ["0", "5", "9"]) {
             expect(validateInput(inputData)).toBe(true);
         }
     });
 
-    test("Returns false for non-digits", () => {
+    it("Returns false for non-digits", () => {
         for (const inputData of ["A", "a", "Z", "z", ".", "/"]) {
             expect(validateInput(inputData)).toBe(false);
         }
     });
 
-    test("Returns true for multi-digit strings", () => {
+    it("Returns true for multi-digit strings", () => {
         for (const inputData of ["12", "123", "1234567890"]) {
             expect(validateInput(inputData)).toBe(true);
         }
     });
 
-    test("Returns true for strings that contain non-digits", () => {
+    it("Returns true for strings that contain non-digits", () => {
         for (const inputData of ["12a", "12.3", "12345b67890"]) {
             expect(validateInput(inputData)).toBe(false);
         }
     });
 
-    test("Returns true for long multi-digit strings", () => {
+    it("Returns true for long multi-digit strings", () => {
         expect(validateInput("123456789012345678901234567890")).toBe(true);
     });
 });
 
 describe("extractPhoneNumber", () => {
-    test("Removes non-digits", () => {
+    it("Removes non-digits", () => {
         expect(extractPhoneNumber("1A2a3Z4a5.6/7-8,9@0#$")).toBe("1234567890");
     });
 
-    test("Trims too long strings", () => {
+    it("Trims too long strings", () => {
         expect(extractPhoneNumber("12345678901234567890")).toBe("1234567890");
     });
 });
