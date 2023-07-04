@@ -12,7 +12,7 @@ export default function ReactPhoneTextBox() {
     };
 
     function handleInput(e) {
-        phoneNumber = extractPhoneNumber(e.target.value);
+        const phoneNumber = extractPhoneNumber(e.target.value);
         setFormattedPhoneNumber(formatPhoneNumber(phoneNumber));
     };
 
