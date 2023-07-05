@@ -29,7 +29,7 @@ it('calls validateInput on beforeInput', () => {
   act(() => {
     textBox[reactPropsKey].onBeforeInput(new InputEvent('beforeinput', { data: '1a2b', bubbles: true }));
   });
-  expect(phoneTextBoxUtilsModule.validateInput).toHaveBeenCalledWith('1a2b');
+  expect(phoneTextBoxUtilsModule.validateInput).toBeCalledWith('1a2b');
 });
 
 it('calls extractPhoneNumber on input', () => {
@@ -38,7 +38,7 @@ it('calls extractPhoneNumber on input', () => {
   act(() => {
     textBox.dispatchEvent(new InputEvent('input', { bubbles: true }));
   });
-  expect(phoneTextBoxUtilsModule.extractPhoneNumber).toHaveBeenCalledWith('3c4d');
+  expect(phoneTextBoxUtilsModule.extractPhoneNumber).toBeCalledWith('3c4d');
 });
 
 it('calls formatPhoneNumber on input', () => {
@@ -47,5 +47,5 @@ it('calls formatPhoneNumber on input', () => {
   act(() => {
     textBox.dispatchEvent(new InputEvent('input', { bubbles: true }));
   });
-  expect(phoneTextBoxUtilsModule.formatPhoneNumber).toHaveBeenCalledWith('5e6f');
+  expect(phoneTextBoxUtilsModule.formatPhoneNumber).toBeCalledWith('5e6f');
 });
