@@ -42,7 +42,7 @@ it('calls formatPhoneNumber on input', () => {
 
 it('sets formattedPhoneNumber from formatPhoneNumber', () => {
   jest.spyOn(phoneTextBoxUtilsModule, phoneTextBoxUtilsModule.formatPhoneNumber.name)
-    .mockImplementation(() => '(123) 45');
+    .mockReturnValue('(123) 45');
   triggerInput();
   expect(textBox.value).toBe('(123) 45');
 });
