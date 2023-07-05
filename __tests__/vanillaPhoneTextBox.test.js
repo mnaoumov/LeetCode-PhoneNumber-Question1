@@ -35,3 +35,12 @@ it('calls formatPhoneNumber on input', () => {
   element.dispatchEvent(new InputEvent('input'));
   expect(phoneTextBoxUtilsModule.formatPhoneNumber).toHaveBeenCalledWith('5e6f');
 });
+
+it('sets formattedPhoneNumber from formatPhoneNumber', () => {
+  jest.spyOn(phoneTextBoxUtilsModule, phoneTextBoxUtilsModule.formatPhoneNumber.name)
+    .mockImplementation(() => "(123) 45");
+
+  element.dispatchEvent(new InputEvent('input'));
+
+  expect(element.value).toBe('(123) 45');
+});
