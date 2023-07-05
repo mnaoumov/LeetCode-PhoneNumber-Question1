@@ -27,22 +27,22 @@ it('calls validateInput on beforeInput', () => {
 });
 
 it('calls extractPhoneNumber on input', () => {
-  jest.spyOn(phoneTextBoxUtilsModule, 'extractPhoneNumber');
+  jest.spyOn(phoneTextBoxUtilsModule, phoneTextBoxUtilsModule.extractPhoneNumber.name);
   textBox.value = '3c4d';
   triggerInput();
   expect(phoneTextBoxUtilsModule.extractPhoneNumber).toBeCalledWith('3c4d');
 });
 
 it('calls formatPhoneNumber on input', () => {
-  jest.spyOn(phoneTextBoxUtilsModule, 'formatPhoneNumber');
-  jest.spyOn(phoneTextBoxUtilsModule, 'extractPhoneNumber').mockReturnValue('5e6f');
+  jest.spyOn(phoneTextBoxUtilsModule, phoneTextBoxUtilsModule.formatPhoneNumber.name);
+  jest.spyOn(phoneTextBoxUtilsModule, phoneTextBoxUtilsModule.extractPhoneNumber.name).mockReturnValue('5e6f');
   triggerInput();
   expect(phoneTextBoxUtilsModule.formatPhoneNumber).toBeCalledWith('5e6f');
 });
 
 it('sets formattedPhoneNumber from formatPhoneNumber', () => {
   jest.spyOn(phoneTextBoxUtilsModule, phoneTextBoxUtilsModule.formatPhoneNumber.name)
-    .mockImplementation(() => "(123) 45");
+    .mockImplementation(() => '(123) 45');
   triggerInput();
   expect(textBox.value).toBe('(123) 45');
 });

@@ -20,7 +20,7 @@ afterEach(() => {
 });
 
 it('calls validateInput on beforeInput', () => {
-  jest.spyOn(phoneTextBoxUtilsModule, 'validateInput');
+  jest.spyOn(phoneTextBoxUtilsModule, phoneTextBoxUtilsModule.validateInput.name);
 
   // BUG: https://github.com/facebook/react/issues/11211
   // React dispatchEvent doesn't trigger onBeforeInput listener,
@@ -33,7 +33,7 @@ it('calls validateInput on beforeInput', () => {
 });
 
 it('calls extractPhoneNumber on input', () => {
-  jest.spyOn(phoneTextBoxUtilsModule, 'extractPhoneNumber');
+  jest.spyOn(phoneTextBoxUtilsModule, phoneTextBoxUtilsModule.extractPhoneNumber.name);
   textBox.value = '3c4d';
   act(() => {
     textBox.dispatchEvent(new InputEvent('input', { bubbles: true }));
@@ -42,8 +42,8 @@ it('calls extractPhoneNumber on input', () => {
 });
 
 it('calls formatPhoneNumber on input', () => {
-  jest.spyOn(phoneTextBoxUtilsModule, 'formatPhoneNumber');
-  jest.spyOn(phoneTextBoxUtilsModule, 'extractPhoneNumber').mockReturnValue('5e6f');
+  jest.spyOn(phoneTextBoxUtilsModule, phoneTextBoxUtilsModule.formatPhoneNumber.name);
+  jest.spyOn(phoneTextBoxUtilsModule, phoneTextBoxUtilsModule.extractPhoneNumber.name).mockReturnValue('5e6f');
   act(() => {
     textBox.dispatchEvent(new InputEvent('input', { bubbles: true }));
   });
